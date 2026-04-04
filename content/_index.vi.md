@@ -9,18 +9,18 @@ chapter : false
 ### Thông Tin Sinh Viên:
 
 <div style="margin-left: 2rem;">
-<p><strong>Họ và Tên:</strong> Phan Quốc Trung</p>
-<p><strong>Số Điện Thoại:</strong> 0528165761</p>
-<p><strong>Email:</strong> trungno3345@gmail.com</p>
+<p><strong>Họ và Tên:</strong> Nguyễn Huỳnh Nhu An</p>
+<p><strong>Số Điện Thoại:</strong> 0984337867</p>
+<p><strong>Email:</strong> annguyen2610a@gmail.com</p>
 <p><strong>Trường:</strong> Đại Học FPT TP.HCM</p>
-<p><strong>Ngành:</strong> Trí Tuệ Nhân Tạo</p>
-<p><strong>Lớp:</strong> SE196518</p>
+<p><strong>Ngành:</strong> Kĩ Thật Phần Mềm</p>
+<p><strong>Lớp:</strong> SE180768</p>
 <p><strong>Công Ty Thực Tập:</strong> Công ty TNHH Amazon Web Services Vietnam</p>
 <p><strong>Vị Trí Thực Tập:</strong> FCJ Cloud Intern</p>
 <p><strong>Thời Gian Thực Tập:</strong> Từ 05/01/2026 đến 18/04/2026</p>  
 </div>
 
-![ConnectPrivate](images/Anh_the.jpg?width=15pc) 
+![ConnectPrivate](/AWS_Intern-Report/images/Anh_the.jpg?width=15pc&v=20260404) 
 
 ### Nội Dung Báo Cáo
  1. [Workblog](1-introduce/)
