@@ -1,5 +1,5 @@
 # Đường dẫn gốc của website trên GitHub Pages (ĐỪNG XÓA DÒNG NÀY)
-baseURL = "https://github.com/AnAn-Aster/AWS_Intern-Report"
+baseURL = "https://AnAn-Aster.github.io/AWS_Intern-Report/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"

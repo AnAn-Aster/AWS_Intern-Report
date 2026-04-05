@@ -12,21 +12,21 @@
     <title>Introduction :: AWS System Manager</title>
 
     
-    <link href="/AWS_Intern-Report/css/nucleus.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/fontawesome-all.min.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/hybrid.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/featherlight.min.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/perfect-scrollbar.min.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/auto-complete.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/atom-one-dark-reasonable.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/theme.css?1775315580" rel="stylesheet">
-    <link href="/AWS_Intern-Report/css/hugo-theme.css?1775315580" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/nucleus.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/fontawesome-all.min.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/hybrid.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/featherlight.min.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/perfect-scrollbar.min.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/auto-complete.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/atom-one-dark-reasonable.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/theme.css?1775404203" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/hugo-theme.css?1775404203" rel="stylesheet">
     
-    <link href="/AWS_Intern-Report/css/theme-workshop.css?1775315580" rel="stylesheet">
+    <link href="/AWS_Intern-Report/css/theme-workshop.css?1775404203" rel="stylesheet">
     
     
 
-    <script src="/AWS_Intern-Report/js/jquery-3.3.1.min.js?1775315580"></script>
+    <script src="/AWS_Intern-Report/js/jquery-3.3.1.min.js?1775404203"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -138,14 +138,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/AWS_Intern-Report/js/lunr.min.js?1775315580"></script>
-<script type="text/javascript" src="/AWS_Intern-Report/js/auto-complete.js?1775315580"></script>
+<script type="text/javascript" src="/AWS_Intern-Report/js/lunr.min.js?1775404203"></script>
+<script type="text/javascript" src="/AWS_Intern-Report/js/auto-complete.js?1775404203"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/AWS_Intern-Report\/";
     
 </script>
-<script type="text/javascript" src="/AWS_Intern-Report/js/search.js?1775315580"></script>
+<script type="text/javascript" src="/AWS_Intern-Report/js/search.js?1775404203"></script>
 
     
   </div>
@@ -1666,7 +1666,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color="orange">04-04-2026</font></i>
+        <i><font color="orange">05-04-2026</font></i>
     </left>
     <left>
         <br>
@@ -1699,7 +1699,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/Xenko2005/AWS_Intern-Report5-Portfwd/5.1-introduction/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/AnAn-Aster/AWS_Intern-Report5-Portfwd/5.1-introduction/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -1745,7 +1745,16 @@
     <div class="wrapper">
         <div id="toc-scroll-wrapper"
             style="max-height: 300px; overflow-y: scroll; overflow-x: hidden; padding-right: 8px;">
-            <nav id="TableOfContents"></nav>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction-to-antiscaq-anti-scam-alert-platform">Introduction to AnTiScaQ (Anti-Scam Alert Platform)</a></li>
+        <li><a href="#aws-solution-architecture-overview">AWS Solution Architecture Overview</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </div>
 </div>
@@ -1793,7 +1802,25 @@
 
 
 
-	<h1 id="introduction">Introduction</h1>
+	<h3 id="introduction-to-antiscaq-anti-scam-alert-platform">Introduction to AnTiScaQ (Anti-Scam Alert Platform)</h3>
+<p><strong>AnTiScaQ</strong> is a modern, <strong>automated anti-scam alert platform</strong> designed to protect users from increasingly sophisticated cybersecurity threats. At its core lies the power of <strong>open-source data intelligence</strong>, utilizing robust scraping engines to deep-dive analyze and verify the risk levels of suspicious <strong>phone numbers, email contents, and domains</strong>. The groundbreaking differentiator of AnTiScaQ is its ability to provide <strong>real-time risk scoring</strong>, enabling the immediate detection, evaluation, and issuance of alerts the moment phishing campaigns break out. This continuous process enriches the threat intelligence database, maximizing safety for users and the community.</p>
+<h3 id="aws-solution-architecture-overview">AWS Solution Architecture Overview</h3>
+<p><strong>Solution Architecture:</strong>
+The <strong>AnTiScaQ</strong> ecosystem is built upon a <strong>Serverless</strong> architecture model, comprehensively leveraging the elite services of the <strong>AWS</strong> cloud platform to deliver highly elastic scalability and <strong>drastically minimize operational costs</strong>. Strictly adhering to the core pillars of the <strong>AWS Well-Architected Framework</strong>, this solution ensures the system remains resilient, secure, and ready to instantly handle massive traffic surges during sudden phishing outbreaks.</p>
+<ul>
+<li>
+<p><strong>Compute &amp; Logic Layer</strong> At the heart of the processing layer, the platform utilizes the combined power of <strong>Amazon API Gateway</strong> and <strong>AWS Lambda</strong> as its primary compute engine, operating entirely without <strong>server management</strong>. Within this architecture, compute functions shoulder the responsibility of processing high-speed REST API queries against the threat database, while specialized Python functions seamlessly execute asynchronous open-source data scraping workflows.</p>
+</li>
+<li>
+<p><strong>Data &amp; Persistence Layer</strong> To solve the challenge of real-time retrieval performance, the system relies on <strong>Amazon DynamoDB</strong> as its central NoSQL database, applying single-table design techniques to store threat intelligence profiles with sub-second latency. Accompanying the database layer is <strong>Amazon S3</strong>, configured as a secure repository for unstructured data such as forensic image evidence, while simultaneously acting as the host for all static assets of the web portal interface.</p>
+</li>
+<li>
+<p><strong>Security &amp; Authentication</strong> To establish a formidable defense perimeter, the architecture deeply integrates <strong>Amazon Cognito</strong> for identity management, supporting highly granular authentication and Role-Based Access Control (RBAC). Alongside this, <strong>AWS Secrets Manager</strong> serves as a secure vault to automatically store and rotate sensitive information like database credentials and API tokens. Meanwhile, the <strong>AWS WAF</strong> firewall operates on the frontline to shield API endpoints from botnet abuse and Distributed Denial of Service (DDoS) attacks.</p>
+</li>
+<li>
+<p><strong>DevOps &amp; Monitoring</strong> To maintain the pace of feature releases and ensure quality, the entire build and deployment lifecycle (CI/CD) is fully automated end-to-end via <strong>GitHub Actions</strong>. On the network delivery front, <strong>Amazon CloudFront CDN</strong> is deployed in tandem with <strong>Amazon S3</strong> to deliver the web interface content at maximum speed to global users. Finally, every system state—from API rate limits to scraping processes—is closely monitored by the duo of <strong>Amazon CloudWatch</strong> and <strong>Amazon SNS</strong>, automatically triggering instant alert workflows upon detecting errors or anomalous cost thresholds.</p>
+</li>
+</ul>
 
 
 
@@ -2631,19 +2658,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/AWS_Intern-Report/js/clipboard.min.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/perfect-scrollbar.min.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/perfect-scrollbar.jquery.min.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/jquery.sticky.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/featherlight.min.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/highlight.pack.js?1775315580"></script>
+    <script src="/AWS_Intern-Report/js/clipboard.min.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/perfect-scrollbar.min.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/perfect-scrollbar.jquery.min.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/jquery.sticky.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/featherlight.min.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/highlight.pack.js?1775404203"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/AWS_Intern-Report/js/modernizr.custom-3.6.0.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/learn.js?1775315580"></script>
-    <script src="/AWS_Intern-Report/js/hugo-learn.js?1775315580"></script>
+    <script src="/AWS_Intern-Report/js/modernizr.custom-3.6.0.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/learn.js?1775404203"></script>
+    <script src="/AWS_Intern-Report/js/hugo-learn.js?1775404203"></script>
 
-    <link href="/AWS_Intern-Report/mermaid/mermaid.css?1775315580" rel="stylesheet" />
-    <script src="/AWS_Intern-Report/mermaid/mermaid.js?1775315580"></script>
+    <link href="/AWS_Intern-Report/mermaid/mermaid.css?1775404203" rel="stylesheet" />
+    <script src="/AWS_Intern-Report/mermaid/mermaid.js?1775404203"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

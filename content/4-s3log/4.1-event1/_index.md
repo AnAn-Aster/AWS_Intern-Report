@@ -35,7 +35,7 @@ Kicked off the day with inspiring keynotes covering AWS's vision for the future 
 #### 10:15 AM - 11:00 AM | Get Started with Vector Database on S3
 Hosted by the amazing **Prapti Gupta**. Her presentation style was exceptionally engaging—some might even say guests left more elated than visitors to Santa's Workshop or the Fountain of Youth! A truly memorable session on leveraging S3 for vector storage.
 
-![Networking Session](/AWS_Intern-Report/images/z7672273786054_ede1dcb746ab243e152415d8345bfcb8.jpg)
+![Networking Session](/AWS_Intern-Report/images/z7693429189696_af8c3e303408e7b87b9b8dae4f2b9a4e.jpg)
 
 #### 11:00 AM - 11:45 AM | Natural Query Language in OpenSearch
 Explored how natural language interfaces are lowering the barrier to querying large datasets, making data exploration more intuitive.
