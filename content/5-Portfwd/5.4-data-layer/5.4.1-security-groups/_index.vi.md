@@ -69,3 +69,28 @@ Bạn sẽ cần tạo 3 bucket với định dạng tên sau (thay thế `ACCOU
 > **Lưu ý quan trọng:** Hãy lặp lại các bước từ 2 đến 11 cho 2 bucket còn lại (`user-report-ACCOUNT_ID-REGION` và `chatbot-image-ACCOUNT_ID-REGION`).
 
 ![Networking Session](/AWS_Intern-Report/images/picture9.jpg)
+**12. Tạo Quy tắc Vòng đời (Lifecycle Rule):**
+* Chọn bucket `chatbot-image-ACCOUNT_ID-REGION` và vào tab **Management**.
+* Nhấn **Create lifecycle rule**.
+![Networking Session](/AWS_Intern-Report/images/CreateLifecycleRule.png)
+**13. Tên và Phạm vi:**
+
+* Nhập tên quy tắc (Ví dụ: `AutoDeleteAfter1Day`).
+* Chọn **Apply to all objects in the bucket** (và xác nhận cảnh báo).
+![Networking Session](/AWS_Intern-Report/images/CreateLifecycleRule2.png)
+
+**14. Hết hạn phiên bản hiện tại của đối tượng (Expire current versions of objects)**
+
+* **Days after object creation:** 1 ngày.
+
+**15. Xóa vĩnh viễn các phiên bản cũ của đối tượng (Permanently delete noncurrent versions of objects)**
+
+* **Days after objects become noncurrent:** 1 ngày.
+
+**16. Xóa các dấu đánh dấu xóa hết hạn hoặc các tệp tải lên dở dang (Delete expired object delete markers or incomplete multipart uploads)**
+
+* Chọn **Delete incomplete multipart uploads.**
+* **Number of days:** 1 ngày
+![Networking Session](/AWS_Intern-Report/images/CreateLifecycleRule3.png)
+
+**17. Nhấn “Create lifecycle rule” để hoàn tất.**
