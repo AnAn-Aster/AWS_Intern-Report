@@ -5,13 +5,6 @@ chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
----
-title: "Triển khai tầng dữ liệu"
-weight: 4
-chapter: false
-pre: " <b> 4.4. </b> "
----
-
 ### Tổng quan
 Trong giai đoạn này, chúng ta sẽ thiết lập nền tảng lưu trữ và cơ sở tri thức (Knowledge Base) cho ứng dụng HRM sử dụng Generative AI. Quá trình này bao gồm việc cấu hình kho lưu trữ đối tượng an toàn (S3), nhập dữ liệu cấu trúc vào cơ sở dữ liệu NoSQL tốc độ cao (DynamoDB), và tích hợp sức mạnh của AWS Bedrock để xử lý dữ liệu RAG (Retrieval-Augmented Generation).
 

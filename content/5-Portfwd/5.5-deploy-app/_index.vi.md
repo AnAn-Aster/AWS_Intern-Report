@@ -5,13 +5,6 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
----
-title: "Triển khai ứng dụng"
-weight: 5
-chapter: false
-pre: " <b> 4.5. </b> "
----
-
 ### Tổng quan
 Trong giai đoạn này, chúng ta sẽ tiến hành hiện đại hóa và tự động hóa quy trình triển khai ứng dụng. Cụ thể, ứng dụng Spring Boot sẽ được đóng gói thành một Docker container, lưu trữ an toàn trên kho lưu trữ của AWS, và cuối cùng được triển khai lên một môi trường có khả năng tự động mở rộng và cân bằng tải.
 

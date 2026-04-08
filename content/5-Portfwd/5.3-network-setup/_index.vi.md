@@ -5,13 +5,6 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
----
-title: "Thiết lập cơ sở hạ tầng"
-weight: 3
-chapter: false
-pre: " <b> 4.3. </b> "
----
-
 ### Tổng quan
 Trong giai đoạn này, chúng ta sẽ xây dựng hạ tầng mạng cơ sở (VPC) và thiết lập các lớp tường lửa bảo mật, tạo nền móng vững chắc cho việc triển khai ứng dụng và cơ sở dữ liệu trên AWS. Việc cấu hình mạng và bảo mật đúng chuẩn là yếu tố tiên quyết để hệ thống hoạt động an toàn và được cô lập hiệu quả trên Cloud.
 
