@@ -15,5 +15,5 @@ Kiến trúc triển khai sẽ được thiết lập bao gồm:
 
 ### Nội dung Thực hiện
 * [Đóng gói ứng dụng với Docker](5.5.1-docker//) 
-* [Build & Push Docker Image lên Amazon ECR](5.5.2-beanstalk//)  
-* [Khởi tạo Elastic Beanstalk)](5.5.3-env-vars//)
+* [Build & Push Docker Image lên Amazon ECR](5.5.2-build--push-docker/)  
+* [Khởi tạo Elastic Beanstalk)](5.5.3-beanstalk//)

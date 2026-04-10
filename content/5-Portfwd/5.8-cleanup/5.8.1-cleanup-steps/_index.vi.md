@@ -5,8 +5,6 @@ chapter: false
 pre: " <b> 4.8.1. </b> "
 ---
 
-### Các bước dọn dẹp
-
 Để tránh phát sinh chi phí không mong muốn sau khi hoàn thành Workshop, hãy xóa tài nguyên theo thứ tự sau:
 
 **1. VPC**: Truy cập VPC, chọn VPC của ứng dụng, nhấn **Delete**
@@ -27,15 +25,17 @@ Bỏ tick **Create final snapshot**, **Retain automated backups**, tick **I ackn
 **4. Elastic Beanstalk**: Truy cập Elastic Beanstalk, tab **Environments**, chọn environment, sau đó nhấn **Terminate environment**
 
 ![Cleanup Session](/AWS_Intern-Report/images/deleteelb.png)
+**5. Bedrock Knowledge Base**: Chọn knowledge base -> Delete
+![Clean Session](/AWS_Intern-Report/images/deletekb.png)
 
-**5. S3 Bucket**: Truy cập S3, tab **General purpose buckets**, chọn bucket chứa frontend, nhấn **Delete**
+**6. S3 Bucket**: Truy cập S3, tab **General purpose buckets**, chọn bucket chứa frontend, nhấn **Delete**
 
 ![Cleanup Session](/AWS_Intern-Report/images/deletes3fe.png)
 
-**6. CloudFront**: Truy cập CloudFront, chọn distribution, chọn **Disable**, sau đó **Delete**
+**7. CloudFront**: Truy cập CloudFront, chọn distribution, chọn **Disable**, sau đó **Delete**
 
 ![Cleanup Session](/AWS_Intern-Report/images/deletecloudfront.png)
 
-**7. CloudWatch**: Truy cập CloudWatch, tab **Alarms**, chọn alarm đã tạo, nhấn **Delete**
+**8. CloudWatch**: Truy cập CloudWatch, tab **Alarms**, chọn alarm đã tạo, nhấn **Delete**
 
 ![Cleanup Session](/AWS_Intern-Report/images/deletecloudwatch.png)

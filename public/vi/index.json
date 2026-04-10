@@ -14,18 +14,18 @@
 	"content": "Thông thường, và theo tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt kỳ thực tập) với các nội dung hàng tuần như sau:\nTuần 1: Làm quen với Hệ sinh thái AWS: Console, Thiết lập CLI và Nền tảng EC2\nTuần 2: Kiến trúc Mạng Cloud: VPC, Subnet, Định tuyến và Cân bằng tải\nTuần 3: Mở rộng Tài nguyên Tính toán: EC2 Nâng cao, Volume Lưu trữ và Quản lý Chi phí\nTuần 4: Thành thạo Object Storage: Amazon S3, Chính sách Vòng đời và Khôi phục Thảm họa\nTuần 5: Triển khai Bảo mật Cloud: IAM, Trách nhiệm Chia sẻ và Quản lý Danh tính\nTuần 6: Khám phá Cơ sở dữ liệu Quản lý: Quan hệ, NoSQL và Khái niệm Kho dữ liệu\nTuần 7: Chuyên sâu về Cơ sở dữ liệu Quan hệ Nâng cao trên AWS\nTuần 8: Khám phá Dịch vụ Phân tích Dữ liệu và Nền tảng Data Lake\nTuần 9: Thực hành Kỹ thuật Dữ liệu và Xây dựng Data Lake\nTuần 10: Phân tích Serverless và Business Intelligence với QuickSight\nTuần 11: Giới thiệu về Dịch vụ AI/ML và Kiến thức Cơ bản về Machine Learning\nTuần 12: Huấn luyện, Triển khai và Mở rộng với Amazon SageMaker\n"
 },
 {
-	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.8-cleanup/5.8.1-cleanup-steps/",
-	"title": "Các bước dọn dẹp",
+	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.6-security/5.6.1-cloudfront/",
+	"title": "Cấu hình S3 &amp; CloudFront &amp; WAF",
 	"tags": [],
 	"description": "",
-	"content": "Các bước dọn dẹp "
+	"content": "Cấu hình S3 bucket for frontend Đầu tiên, chạy lệnh sau để build project React thành static files: npm run build\nMột thư mục dist sẽ được tạo ra, chứa toàn bộ file deploy (HTML, CSS, JS).\nTruy cập AWS Management Console, tìm S3, chọn Create Bucket\nChọn Global namespace cho bucket namespace, tại bucket name nhập scam-detection-fe\nChọn ACLs disabled, nhớ tick chọn Block all public access.\nGiữ nguyên các cấu hình còn lại, sau đó nhấn Create\nTruy cập vào bucket vừa tạo, chọn Upload\nChọn Add files, thêm tất cả file trong thư mục dist vừa build\nChọn Add folder, thêm toàn bộ folder trong dist (ví dụ: /assets)\nSau đó kéo xuống dưới và nhấn Upload\nBạn sẽ thấy tất cả file và folder trong dist đã xuất hiện trong tab Objects\nConfigure Cloudfront \u0026amp; WAF Truy cập Amazon CloudFront console, chọn Create distribution, chọn Free plan\nNhấn Next, nhập anti-scaq cho Distribution name, chọn loại Single website or app\nTại Origin type, chọn Amazon S3, sau đó chọn bucket vừa tạo\nCấu hình các thông số theo hình minh họa:\nNhấn Next, kiểm tra lại cấu hình, sau đó chọn Create distribution. Hệ thống sẽ mất khoảng 4–5 phút để khởi tạo.\nSau khi tạo xong, vào tab General, ở phần Settings chọn Edit, tại mục Default root object - optional, điền vào index.html. Sau đó, nhấn Save changes\nĐể cấp quyền cho CloudFront truy cập file trong S3, vào tab Permissions của bucket → chọn Edit bucket policy Thêm policy theo format sau rồi nhấn Save changes:\nBây giờ bạn có thể truy cập UI React thông qua Distribution domain name của CloudFront.\n"
 },
 {
-	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.6-security/5.6.1-cloudfront/",
-	"title": "Cấu hình S3 &amp; CloudFront",
+	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.8-cleanup/5.8.1-cleanup-steps/",
+	"title": "Dọn dẹp tài nguyên",
 	"tags": [],
 	"description": "",
-	"content": "Cấu hình S3 \u0026amp; CloudFront "
+	"content": "Các bước dọn dẹp Để tránh phát sinh chi phí không mong muốn sau khi hoàn thành Workshop, hãy xóa tài nguyên theo thứ tự sau:\n1. VPC: Truy cập VPC, chọn VPC của ứng dụng, nhấn Delete\n2. RDS for MySQL: Truy cập RDS, tab Databases, chọn database, nhấn Delete.\nBỏ tick Create final snapshot, Retain automated backups, tick I acknowledge \u0026hellip;\n3. ECR: Truy cập ECR, tab Repositories, chọn repository chứa Docker image của ứng dụng, nhấn Delete\n4. Elastic Beanstalk: Truy cập Elastic Beanstalk, tab Environments, chọn environment, sau đó nhấn Terminate environment\n5. Bedrock Knowledge Base: Chọn knowledge base -\u0026gt; Delete 6. S3 Bucket: Truy cập S3, tab General purpose buckets, chọn bucket chứa frontend, nhấn Delete\n7. CloudFront: Truy cập CloudFront, chọn distribution, chọn Disable, sau đó Delete\n8. CloudWatch: Truy cập CloudWatch, tab Alarms, chọn alarm đã tạo, nhấn Delete\n"
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.5-deploy-app/5.5.1-docker/",
@@ -39,7 +39,7 @@
 	"title": "Giám sát với CloudWatch",
 	"tags": [],
 	"description": "",
-	"content": "Giám sát với CloudWatch "
+	"content": "Monitor với SNS \u0026amp; CloudWatch Tạo SNS Topic: Trong AWS Management Console, tìm SNS:\nVào tab Topic, chọn Create topic\nChọn loại Standard, nhập tên Application-alerts, sau đó nhấn Create topic\nTạo Subscription Chọn Create subscription, tại Protocol chọn Email, nhập email của bạn để nhận thông báo từ SNS\nSau khi tạo xong, vào mail để xác nhận email.\nTạo CPU Alarm Truy cập CloudWatch \u0026gt; Alarms \u0026gt; Create alarm\nChọn Select metric \u0026gt; EC2 \u0026gt; Per-Instance Metrics \u0026gt; chọn InstanceID của Beanstalk \u0026gt; CPUUtilization\nCondition: CPUUtilization lớn hơn 70%\nNotification: chọn Topic Application-alerts\nKiểm tra lại cấu hình alarm, sau đó nhấn Create alarm\n"
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.1-introduction/",
@@ -158,7 +158,7 @@
 	"title": "Thiết lập AWS Bedrock Knowledge Base",
 	"tags": [],
 	"description": "",
-	"content": " Tải dữ liệu (PDF) lên bucket rag-data. Mở bảng điều khiển Amazon Bedrock console. Chọn Knowledge Base: Nhấp vào nút Create Knowledge Base. Cấu hình chung (General Configuration): Tên nguồn dữ liệu (Data source name): Nhập RAG-data. S3 URL: Chọn tệp đã tải lên bucket ở Bước 1. Chiến lược phân tích (Parsing strategy): Chọn Amazon Bedrock default parser (Trình phân tích mặc định). Chiến lược phân đoạn (Chunking strategy): Chọn Semantic chunking (Phân đoạn theo ngữ nghĩa). Chọn mô hình nhúng (Embedding model): Chọn mô hình mà bạn mong muốn. Lưu trữ vector (Vector store): Chọn Quick create a new vector store (Tạo nhanh lưu trữ vector mới). Loại lưu trữ vector: Chọn Amazon S3 vector. Nhấp vào nút \u0026lsquo;Create knowledge base\u0026rsquo; (Tạo cơ sở tri thức). "
+	"content": " Tải dữ liệu (PDF) lên bucket rag-data. Mở bảng điều khiển Amazon Bedrock console. Chọn Knowledge Base: Nhấp vào nút Create Knowledge Base. Cấu hình chung (General Configuration): Tên nguồn dữ liệu (Data source name): Nhập RAG-data. S3 URL: Chọn tệp đã tải lên bucket ở Bước 1. Chiến lược phân tích (Parsing strategy): Chọn Amazon Bedrock default parser (Trình phân tích mặc định). Chiến lược phân đoạn (Chunking strategy): Chọn Semantic chunking (Phân đoạn theo ngữ nghĩa). Chọn mô hình nhúng (Embedding model): Chọn mô hình mà bạn mong muốn. Lưu trữ vector (Vector store): Chọn Quick create a new vector store (Tạo nhanh lưu trữ vector mới). Loại lưu trữ vector: Chọn Amazon S3 vector. Nhấp vào nút \u0026lsquo;Create knowledge base\u0026rsquo; (Tạo cơ sở tri thức). Truy cập vào knowledge base vừa tạo và ấn sync "
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/vi/5-portfwd/5.3-network-setup/",

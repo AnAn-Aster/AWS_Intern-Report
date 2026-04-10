@@ -15,5 +15,5 @@ The deployment architecture will include:
  * **AWS Elastic Beanstalk:** A Platform as a Service (PaaS) that simplifies deployment. It will automatically handle complex tasks such as resource allocation (EC2), application load balancing configuration, and auto-scaling based on the `Dockerrun.aws.json` configuration file.
 ### Implementation Contents
 * [Packaging the application with Docker](5.5.1-docker//)
-* [Building & Pushing Docker Image to Amazon ECR](5.5.2-beanstalk//)
-* [Initializing Elastic Beanstalk](5.5.3-env-vars//)
+* [Building & Pushing Docker Image to Amazon ECR](5.5.2-build--push-docker//)
+* [Initializing Elastic Beanstalk](5.5.3-beanstalk//)

@@ -18,14 +18,14 @@
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
-	"content": "Clean up resources "
+	"content": "To avoid unexpected costs after completing the Workshop, delete resources in the following order:\n1. VPC: Go to VPC, choose VPC for this application, click Delete\n2. RDS for MySQL: Go to RDS, tab Databases, choose database , click Delete. Uncheck Create final snapshot, Retain automated backups, check I acknowledge \u0026hellip;\n3. ECR: Go to ECR, tab Repositories, choose repository that contains docker image of application. Choose Delete\n4. Elastic Beanstalk: Go to Elastic Beanstalk, tab Environments, choose environment . Then, click Terminare environment\n5. Bedrock Knowledge Base: Choose knowledge base -\u0026gt; Delete 6. S3 Bucket: Go to S3, tab General purpose buckets, choose the bucket hold frontend. Click Delete\n7. Cloudfront: Go to Cloudfront, choose distribution. Choose Disable, then Delete\n8. CloudWatch: Go to CloudWatch, tab Alarms, choose the alarm just set, click Delete\n"
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/5-portfwd/5.6-security/5.6.1-cloudfront/",
-	"title": "Configure S3 &amp; CloudFront",
+	"title": "Configure S3 &amp; CloudFront &amp; WAF",
 	"tags": [],
 	"description": "",
-	"content": "Configure S3 \u0026amp; CloudFront "
+	"content": "Configure S3 bucket for frontend First, run this command to build your React project to static files: npm run build. A .dist folder will appear, containing all the deploy files (HTML, CSS, JS).\nGo to AWS Management Console, search for S3, click Create Bucket\nChoose Global namespace for bucker namespace, for bucket name fill out scam-detection-fe\nChoose ACLs disabled, remember to tick Block all public access.\nKeep the remaining configurations unchanged. Click Create\nAccess into the bucket just created, click Upload\nChoose Add files, add all the files in dist folder that we just build before Choose Add folder, add all folders in dist too, like folder /assets. Then, scroll down , click Upload\nYou can see all the files and folders in dist folder has been availabled in tab Objects\nConfigure Cloudfront \u0026amp; WAF Go to Amazon Cloudfront console, click Create distribution, choose Free plan\nClick Next, type anti-scaq for Distribution name, choose type Single website or app\nAt Origin type, choose Amazon S3, for S3 origin browse the bucket that created\nConfig settings as images demonstrate:\nClick Next, review the configuration. Then, click Create distribution. The system will take approximately 4-5 minutes to initialize.\nIn General tab, at Settings click Edit, at Default root object - optional, fill out index.html. Then, click Save changes\nIn order to gain permission for Cloudfront to access S3 files, go to tab Permisisions in your bucker, click Edit bucket policy. Use this format statement, then click Save changes\nNow, we can access to our UI React project with Distribution domain name of Cloudfront.\n"
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/5-portfwd/5.3-network-setup/5.3.1-vpc-subnets/",
@@ -53,7 +53,7 @@
 	"title": "Monitor with CloudWatch",
 	"tags": [],
 	"description": "",
-	"content": "Monitor with CloudWatch "
+	"content": "Monitor with SNS \u0026amp; CloudWatch Create SNS Topic: In AWS Management console, search for SNS:\nGo to tab Topic, click Create topic\nChoose type Standard, type name Application-alerts, click Create topic\nCreate Subcription Click Create subscription, select Protocol is Email, type in your email to receive notification from SNS\nAfter created, please go to your mail to confirm your email.\nCreate CPU Alarm Go to CloudWatch \u0026gt; Alarms \u0026gt; Create alarm\nSelect metric \u0026gt; EC2 \u0026gt; Per-Instance Metrics \u0026gt; Select the InstanceID of Beanstalk \u0026gt; CPUUtilization\nCondition: CPUUtilization: Greater than 70%\nNotification: Select Topic Application-alerts\nReview configuration of the alarm. Then, click Create alarm\n"
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/5-portfwd/5.5-deploy-app/5.5.1-docker/",
@@ -137,7 +137,7 @@
 	"title": "Bedrock Knowledge Base",
 	"tags": [],
 	"description": "",
-	"content": " Upload data (PDF) to the rag-data bucket. Open the Amazon Bedrock console. Choose Knowledge Base: Click Create Knowledge Base. General Configuration: Data source name: Enter RAG-data. S3 URL: Choose the file uploaded to the bucket in Step 1. Parsing strategy: Choose Amazon Bedrock default parser. Chunking strategy: Choose Semantic chunking. Choose embedding model: Select your preferred model. Vector store: Choose Quick create a new vector store. Vector store type: Choose Amazon S3 vector. Click \u0026lsquo;Create knowledge base\u0026rsquo;. "
+	"content": " Upload data (PDF) to the rag-data bucket. Open the Amazon Bedrock console. Choose Knowledge Base: Click Create Knowledge Base. General Configuration: Data source name: Enter RAG-data. S3 URL: Choose the file uploaded to the bucket in Step 1. Parsing strategy: Choose Amazon Bedrock default parser. Chunking strategy: Choose Semantic chunking. Choose embedding model: Select your preferred model. Vector store: Choose Quick create a new vector store. Vector store type: Choose Amazon S3 vector. Click \u0026lsquo;Create knowledge base\u0026rsquo;. Choose knowledge base created and click sync "
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/5-portfwd/5.3-network-setup/5.3.3-route-table/",
@@ -277,7 +277,7 @@
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
-	"content": "Clean up resources "
+	"content": "Overview After completing the deployment and testing of the AnTiScaQ system (or finishing the Workshop exercises), the final and extremely important administrative step is Resource Cleanup. Accidentally leaving cloud services running in the background when no longer needed will lead to unexpected costs on AWS.\nIn this section, we will perform a secure removal and thorough cleanup of the entire AWS infrastructure ecosystem allocated to the project, including:\nComputing \u0026amp; Applications (Elastic Beanstalk, ECR): Completely terminate the backend environment and delete the application’s Docker image repositories. Storage \u0026amp; Data (RDS, S3): Permanently delete the MySQL relational database (without creating a final backup) and clean up the frontend/static resource storage buckets. Network \u0026amp; Distribution (VPC, CloudFront): Disable the global content delivery network and remove the application’s internal virtual network infrastructure. Monitoring (CloudWatch): Clean up and remove established automatic alarm streams. Actions Taken Resource Cleanup "
 },
 {
 	"uri": "http://localhost:1313/AWS_Intern-Report/1-introduce/1.9-week9/",
